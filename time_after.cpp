@@ -1,5 +1,5 @@
 // Task: Time After
-// Algo: Modulo
+// Tag: Modulo
 // Date: 9/8/2023
 // Author: Jo
 
