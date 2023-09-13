@@ -1,0 +1,3 @@
+[submodule "My-STL"]
+	path = My-STL
+	url = https://github.com/khajornritdacha/My-STL.git
