@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/khajornritdacha/DataStruct/d65_q2a_mitosis",
-      "program": "/home/khajornritdacha/DataStruct/d65_q2a_mitosis/build/Debug/outDebug",
+      "cwd": "/home/khajornritdacha/DataStruct",
+      "program": "/home/khajornritdacha/DataStruct/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
