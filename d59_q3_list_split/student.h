@@ -3,15 +3,22 @@
 
 template <typename T>
 CP::list<T> CP::list<T>::split(iterator it,size_t pos) {
-  //write your code here
+
   CP::list<T> result;
 
-  iterator cur_it = begin();
-  for (int i = 0; i < pos; i++) cur_it++;
-  result.mHeader = cur_it;
-  result.mSize = size() - pos;
-  mSize -= size() - pos;
-  cur_it->next = 
+  if (it == mHeader) return result;
+
+  it.ptr->prev->next = mHeader;
+  result.mHeader->prev = mHeader->prev;
+  mHeader->prev->next = result.mHeader;
+  mHeader->prev = it.ptr->prev;
+
+  result.mHeader->next = it.ptr;
+  it.ptr->prev = result.mHeader;
+
+  result.mSize += mSize - pos;
+  mSize = pos;
+
   return result;
 }
 
