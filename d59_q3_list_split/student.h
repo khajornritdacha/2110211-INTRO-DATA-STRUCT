@@ -3,20 +3,24 @@
 
 template <typename T>
 CP::list<T> CP::list<T>::split(iterator it,size_t pos) {
-
+  //write your code here
   CP::list<T> result;
 
-  if (it == mHeader) return result;
+  if (it == end()) return result;
 
-  it.ptr->prev->next = mHeader;
-  result.mHeader->prev = mHeader->prev;
-  mHeader->prev->next = result.mHeader;
-  mHeader->prev = it.ptr->prev;
+  // ตัวถูกแก้ค่าไว้หลังสุด
 
-  result.mHeader->next = it.ptr;
-  it.ptr->prev = result.mHeader;
+  it.ptr->prev->next = mHeader; // 1
 
-  result.mSize += mSize - pos;
+  result.mHeader->next = it.ptr; // 3
+
+  mHeader->prev->next = result.mHeader; // 5
+  result.mHeader->prev = mHeader->prev; // 6
+  
+  mHeader->prev = it.ptr->prev; // 2
+  it.ptr->prev = result.mHeader; // 4
+
+  result.mSize = mSize - pos;
   mSize = pos;
 
   return result;
